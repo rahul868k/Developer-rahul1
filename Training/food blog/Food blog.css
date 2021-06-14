@@ -1,0 +1,71 @@
+body {margin: 30px;
+    padding: 0;
+  font-family: 'Ubuntu', sans-serif;
+  }
+
+h1 {font-size: 2.5em;
+  margin-top: 40px;
+  }
+
+.a {background: #ECF0F1;}
+.ab {padding: 150px;}
+.tc {padding-left: 310px;}
+
+.ba {text-align: center;
+  padding: 50px;
+  padding-top: 0}
+.bb {text-align: center;
+  padding: 50px;
+  padding-top: 0;}
+.bc {text-align: center;
+ padding: 50px;
+ padding-top: 0}
+.bd {text-align: center;
+ padding: 50px;
+ padding-top: 0}
+.ac {text-align: center;
+  padding: 50px;
+  padding-bottom: 0}
+.ad {text-align: center;
+  padding: 50px;
+  padding-bottom: 0}
+.ae {text-align: center;
+ padding: 50px;
+ padding-bottom: 0}
+.af {text-align: center;
+ padding: 50px;
+ padding-bottom: 0}
+
+.nag1 {
+     font-family: 'Lobster', cursive;
+     text-align: center;
+     font-size: 50px;
+     padding: 20px;}
+.nag2 {padding-left: 130px;}
+
+.main {margin-top: 50px;}
+.nb {width:325px;
+  float:left;
+  margin-left: 50px;
+  }
+.nc {width:300px;
+ float:left;
+ margin-left:  130px;
+ }
+.nd {width:325px;
+  float:right;
+  margin-right: 50px;
+  }
+  
+.main1 {margin-top: 320px;
+      clear: both;}
+.ne {padding: 0px 60px 0 40px;
+   }
+figure {float:right;
+      margin-top: 50px;}
+
+.main2 {margin-top: 50px;}
+.nv {padding: 30px;}
+u {color: red}
+
+.main3 {margin-left: 800px;}

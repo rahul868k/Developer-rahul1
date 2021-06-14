@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>header with js</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        header{
+            background: #222;
+            padding: 5px 10px;
+            box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.8);
+        }
+        ul{
+            list-style: none;
+        }
+        .menu li{
+            font-size: 16px;
+            padding: 15px 5px;
+        }
+        .menu a:hover{
+            text-decoration: underline;
+        }
+        .menu li a{
+            display: block;
+            /*border-right: 1px solid #aaa;*/
+            text-decoration: none;
+            color: white;
+            text-transform: capitalize;
+        }
+        .logo{
+            opacity: 0;
+            animation: slide_left 0.5s linear 0.5s forwards;
+        }
+        @keyframes slide_left {
+            0%{
+                opacity: 0;
+                transform: translateZ(-100px);
+            }
+            100%{
+                opacity: 1;
+                transform: translateZ(0);
+            }
+        }
+        .logo a{
+            font-size: 25px;
+        }
+        .button.secondary{
+            border-bottom: 1px solid #444;
+        }
+             /* mobile view*/
+
+        .menu{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .toggle .menu-icon{
+            cursor: pointer;
+          /* border: 1px solid red;*/
+            padding: 15px 10px;
+            position: relative;
+            display: block;
+        }
+        .toggle .menu-icon .nav-icon{
+            cursor: pointer;
+            background: #999;
+            display: block;
+            height: 2px;
+            width: 18px;
+            position: relative;
+            transition: background 0.2s ease-out;
+        }
+        .nav-icon::before,.nav-icon::after{
+            content: "";
+            background: #999;
+            display: inline-block;
+            height: 2px;
+            position: absolute;
+            width: 18px;
+            transition: all 0.2s ease-in-out;
+        }
+        .nav-icon::before{
+            top:5px;
+        }
+        .nav-icon::after{
+            top: -5px;
+        }
+        .toggle #menu-btn{
+            display: none;
+        }
+        .logo{
+            flex: 1;
+        }
+        .toggle{
+            order: 2;
+        }
+        .item.button:not(.secondary){
+            order: 1;
+            width: auto;
+            display: block;
+        }
+        .item{
+            order: 4;
+            width: 100%;
+            text-align: center;
+            display: none;
+            animation: slide_top 0.5s linear  forwards;
+            animation-delay: calc(0.2s * var(--i));
+            transition: all 0.5s ease-in;
+        }
+        @keyframes slide_top {
+                0%{
+                    opacity: 0;
+                    transform: translateY(100px);
+                }
+                100%{
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        .button.secondary{
+            order: 3;
+        }
+        .menu .button:not(.secondary) a{
+                text-decoration: none;
+                padding: 7px 15px;
+                background: teal;
+                border: 1px solid #006d6d;
+                border-radius: 50em;
+            }
+            .button:not(.secondary) a:hover{
+                background: #006d6d;
+                border-color: #005959;
+                transition: all 0.25s;
+            }
+
+        /* tablet view */
+
+        @media all and (min-width:468px){
+            .menu{
+                justify-content: center;
+            }
+            .button.secondary{
+                order: 2;
+                border: 0;
+                width: auto;
+            }
+            .item.button{
+                order: 1;
+            }
+            .toggle{
+                order: 3;
+            }
+            .button.secondary a{
+                text-decoration: none;
+                padding: 7px 15px;
+                border: 1px solid #006d6d;
+                border-radius: 50em;
+            }
+            .button.secondary a:hover{
+                color: #ddd;
+            }
+            .item.button{
+                display: block;
+            }
+            
+        }
+
+                /* laptop view*/
+
+        @media all and (min-width:768px){
+            .item{
+                display: block;
+                width: auto;
+                opacity: 0;
+               
+            }
+            
+            .toggle{
+                display: none;
+            }
+            .logo{
+                order: 0;
+            }
+            .item{
+                order:1
+            }
+            .button{
+                order:2;
+            }
+            .menu li{
+                padding: 15px 10px;
+            }
+            .menu li.button{
+                padding-right: 0;
+            }
+        }
+        .item.active{
+            display: block;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+    // Shorthand for $( document ).ready() jquery //follow andrew
+    $(function() {
+            $(".toggle").on("click", function(){
+                if($(".item").hasClass("active")){
+                    $(".item").removeClass("active");
+                }
+                else{
+                    $(".item").addClass("active");
+                }
+            })
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <ul class="menu">
+            <li class="logo"><a href="#">logo</a></li>
+            <li class="item" style="--i:1;"><a href="#">home</a></li>
+            <li class="item" style="--i:2;"><a href="#">about</a></li>
+            <li class="item" style="--i:3;"><a href="#">services</a></li>
+            <li class="item" style="--i:4;"><a href="#">Contact-us</a></li>
+            <li class="item button" style="--i:5;"><a href="#">login</a></li>
+            <li class="item button secondary" style="--i:6;"><a href="#">sign-up</a></li>
+            <li class="toggle">
+                <input type="checkbox" class="menu-icon" id="menu-btn">
+                <label for="menu-icon" class="menu-icon"><span class="nav-icon"></span></label>
+            </li>
+        </ul>
+    </header>
+</body>
+</html>

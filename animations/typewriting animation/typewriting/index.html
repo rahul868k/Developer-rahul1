@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>typeWriting animation</title>
+    <style>
+        :root{
+            --bg-color:hsl(49 37% 94%)
+        }
+        body{
+            margin: 0;
+            font-family: "Source Sans Prp" sans-serif;
+            min-height: 100vh;
+            display: grid;
+            place-content: center;
+            text-align: center;
+            background: var(--bg-color);
+        }
+        h1{
+           position: relative;
+           font-family: "Source Sans Prp" monospace;
+        }
+        h1::before,
+        h1::after{
+            content: "";
+            position:absolute;
+            inset:0 0 0 0;
+            /*top: 0; bottom: 0; left: 0; right: 0;*/
+        }
+        h1::before{
+            background: var(--bg-color);
+            animation: typewriter 5s steps(25) 0.5s forwards;
+        }
+        h1::after{
+            width:0.125em;
+            background:black;
+            animation: typewriter 5s steps(25) 0.5s forwards,
+            blink 750ms steps(25) forwards infinite;
+        }
+        p{
+            color:hsl(0, 0%, 0% / 0.7);
+            font-size: 2rem;
+            font-weight: 400;
+            opacity: 0;
+            transform: translateY(3rem);
+            animation: fadeInUp 2s ease calc(4s + 2s) forwards;
+        }
+        @keyframes typewriter {
+            to{
+               left: 100%;
+            }
+        }
+        @keyframes blink {
+            to{
+               background: transparent;
+            }
+        }
+        @keyframes fadeInUp {
+            to{
+              opacity: 1;
+              transform: translateY(0);
+            }
+        }
+        @media all and (max-width:360px) {
+            h1{
+           font-size: 1.5rem;
+           padding: 0 10px;
+        }
+        p{
+            font-size: 1.4rem;
+            font-weight: 400;
+        }
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello, my name is Rahul. </h1>
+
+    <p> welcome to my website</p>
+</body>
+</html>

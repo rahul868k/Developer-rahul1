@@ -1,0 +1,71 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Toggle Menu</title>
+    <script>
+        function togglemenu(){
+            document.getElementById('Sidebar').classList.toggle('active');
+        }
+    </script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #sidebar{
+            background-color: black;
+            position: fixed;
+            width: 30%;
+            height: 100%;
+            left: -30%;
+        }
+        #sidebar li{
+            border-bottom: 1px solid gray;
+            padding: 20px;
+            text-align: center;
+        }
+        ul li a{
+           color: white;
+           font-size: 30px;
+           text-decoration: none;
+           border-bottom: 3px solid #fff;
+        }
+        .toggle_btn{
+            position: absolute;
+            left: 100%;
+            top: 15px;
+            cursor: pointer;
+        }
+        .toggle_btn span{
+            background-color: black;
+            width: 30px;
+            height: 4px;
+            margin: 3px;
+            display: block;
+        }
+        #sidebar.active{
+            left: 0%;
+        }
+    </style>
+</head>
+<body>
+    <div id="Sidebar" onclick="togglemenu()">
+        <div class="toggle_btn">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav>
+         <ul>
+             <li><a href="#">Home</a></li>
+             <li><a href="#">About</a></li>
+             <li><a href="#">Gallery</a></li>
+             <li><a href="#">Contact Us</a></li>
+         </ul>
+        </nav>
+    </div>
+</body>
+</html>

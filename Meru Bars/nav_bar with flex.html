@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav bar </title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            background: cyan;
+            display:flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+        /* --flex  basis--
+        .container > div{
+            background: darkcyan;
+        }
+        
+        .container >*:nth-child(1){
+            flex: 1 1 20%;
+        }
+        .container >*:nth-child(2){
+            flex: 1 1 70%;
+        }
+        .container >*:nth-child(3){
+            flex: 1 1 10%;
+        }*/
+        .logo{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding-right: 15px;
+        }
+        .nav_bar{
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;         /*with flex*/
+        }
+        .nav_bar ul li{
+            list-style-type: none;
+            display: inline-block;
+            padding: 10px 18px;
+            transition: 0.5s ease-in-out;
+        }
+        .logo{
+            flex:0.6;
+            background-color: hotpink;
+        }
+        .nav_bar{
+            flex: auto;
+            background-color: indigo;
+        }
+        .menu_trigger{
+            flex: auto;
+            background-color: lawngreen;
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo"><strong>DREAM</strong> DEALER</div>
+            <div class="nav_bar">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="menu_trigger">
+               <a href="#">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+               </a>
+            </div>
+        </div>
+    </header>
+</body>
+</html>

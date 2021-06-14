@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clip-path hover</title>
+    <style>
+        body{
+            background: #dcf5ff;
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            height: 100vh;
+            display: grid;
+            gap: 10px;
+            grid-auto-flow: column;
+            justify-content: center;
+            place-items: center;
+            font-family: 'Nunito', 'sans-serif';
+        }
+        .container1{
+            width: 50%;
+            /*background: white;*/
+            border-radius: 10px;
+        }
+        .inner1{
+            background: #00b6ff;
+            padding:1em;
+            border-radius:10px;
+            width:100%;
+            clip-path: circle(10% at 0% 0%);
+            transition: clip-path 0.5s ease-in-out;
+        }
+        h1{
+            color: white;
+            margin: 0;
+        }
+        p {
+            color: white;
+            font-size: .8rem;
+        }
+
+         .inner1:hover{
+            clip-path: circle(75%);
+        }
+
+
+        /*inner2*/
+        /*.container{
+            width: 50%;
+            background: white;
+            border-radius: 10px;
+        }*/
+        .inner2{
+            background: rgb(7, 218, 165);
+            padding:1em;
+            border-radius:10px;
+            width:50%;
+            clip-path: circle(10% at 90% 20%);
+            transition: all 0.5s ease-in-out;
+            cursor: pointer;
+        }
+        .inner2:hover{
+            clip-path: circle(75%);
+            background: #00b6ff;
+        }
+        span{
+            float: right;
+            color: white;
+            font-weight: bold;
+            transition: color  0.5s;
+            position: relative;
+            margin-right: 4%;
+        }
+        .inner2:hover span{
+            color: rgba(255, 255, 255, 0);
+        }
+        h1{
+            color: white;
+            margin: 0;
+        }
+        p {
+            color: white;
+            font-size: .8rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="container1">
+            <div class="inner1">
+                <h1>Hey</h1>
+                <p>This is an informative card will tell you something that's ... well, important!</p>
+            </div>
+        </div>
+
+        <div class="container2">
+            <div class="inner2">
+                <span>i</span>
+                <h1>Hey</h1>
+                <p>This is an informative card will tell you something that's ... well, important!</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

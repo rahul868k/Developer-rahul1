@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>header with js</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        header{
+            background: #222;
+            padding: 5px 10px;
+            box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.8);
+        }
+        header ul{
+            list-style: none;
+            overflow: hidden;
+            max-height: 64px;
+            transition: max-height 0.4s ease-out;
+        }
+        .menu li{
+            font-size: 16px;
+            padding: 15px 5px;
+        }
+        .menu a:hover{
+            text-decoration: underline;
+            transition:  0.3s ease-in;
+        }
+        .menu li a{
+            display: block;
+            /*border-right: 1px solid #aaa;*/
+            text-decoration: none;
+            color: white;
+            text-transform: capitalize;
+        }
+        .logo a{
+            font-size: 25px;
+        }
+        .button.secondary{
+            border-bottom: 1px solid #444;
+        }
+             /* mobile view*/
+
+        .menu{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            
+        }
+        header .menu-icon{
+            cursor: pointer;
+           /*border: 1px solid red;*/
+            padding: 15px 10px;
+            position: relative;
+            display: block;
+            margin-top: 15px;
+        }
+        header .menu-icon .nav-icon{
+            cursor: pointer;
+            background: #999;
+            display: block;
+            height: 2px;
+            width: 18px;
+            position: relative;
+            transition: background 0.2s ease-out;
+        }
+        .nav-icon::before,.nav-icon::after{
+            content: "";
+            background: #999;
+            display: inline-block;
+            height: 2px;
+            position: absolute;
+            width: 18px;
+            transition: all 0.2s ease-in-out;
+        }
+        .nav-icon::before{
+            top:5px;
+        }
+        .nav-icon::after{
+            top: -5px;
+        }
+        #menu-btn{
+            display: none;
+        }
+        .logo{
+            flex: 1;
+        }
+        .menu-icon{
+            /*order: 2;*/
+            float: right;
+        }
+        .item.button:not(.secondary){
+            order: 1;
+            width: auto;
+            display: block;
+        }
+        .item{
+            order: 4;
+            width: 100%;
+            text-align: center;
+           
+        }
+        .button.secondary{
+            order: 3;
+        }
+        .menu .button:not(.secondary) a{
+                text-decoration: none;
+                padding: 7px 15px;
+                background: teal;
+                border: 1px solid #006d6d;
+                border-radius: 50em;
+            }
+            .button:not(.secondary) a:hover{
+                background: #006d6d;
+                border-color: #005959;
+                transition: all 0.25s;
+            }
+
+        /* tablet view */
+
+        @media all and (min-width:468px){
+            .menu{
+                justify-content: center;
+            }
+            .button.secondary{
+                order: 2;
+                border: 0;
+                width: auto;
+                
+            }
+            .item.button{
+                order: 1;
+            }
+            /*.toggle{
+                order: 3;
+            }*/
+            .button.secondary a{
+                text-decoration: none;
+                padding: 7px 15px;
+                border: 1px solid #006d6d;
+                border-radius: 50em;
+            }
+            .button.secondary a:hover{
+                color: #ddd;
+            }
+            .item.button{
+                display: block;
+            }
+            
+        }
+
+                /* laptop view*/
+
+        @media all and (min-width:768px){
+            .item{
+                display: block;
+                width: auto;
+            }
+            header .menu-icon{
+                display: none;
+            }
+            .logo{
+                order: 0;
+            }
+            .item{
+                order:1
+            }
+            .button{
+                order:2;
+            }
+            .menu li{
+                padding: 15px 10px;
+            }
+            .menu li.button{
+                padding-right: 0;
+            }
+        }
+
+    input[type=checkbox]:checked ~ ul{
+           max-height: 360px;
+         
+        }
+    
+    input[type=checkbox]:checked ~ .menu-icon .nav-icon{
+        background: transparent;
+        }
+    input[type=checkbox]:checked ~ .menu-icon .nav-icon:before{
+        transform: rotate(-45deg);
+        top: 0;
+        }
+    input[type=checkbox]:checked ~ .menu-icon .nav-icon:after{
+        transform: rotate(45deg);
+        top: 0;
+        }   
+   
+     /*   .item.active{
+            display: block;
+        }*/
+    </style>
+  <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+    // Shorthand for $( document ).ready() jquery //follow andrew
+    $(function() {
+            $(".toggle").on("click", function(){
+                if($(".item").hasClass("active")){
+                    $(".item").removeClass("active");
+                }
+                else{
+                    $(".item").addClass("active");
+                }
+            })
+        });
+    </script> -->
+</head>
+<body>
+    <header>
+         <input type="checkbox" class="menu-btn" id="menu-btn">
+         <label for="menu-btn" class="menu-icon"><span class="nav-icon"></span></label>
+        <ul class="menu">
+            <li class="logo"><a href="#">logo</a></li>
+            <li class="item"><a href="#">home</a></li>
+            <li class="item"><a href="#">about</a></li>
+            <li class="item"><a href="#">services</a></li>
+            <li class="item"><a href="#">Contact-us</a></li>
+            <li class="item button"><a href="#">login</a></li>
+            <li class="item button secondary"><a href="#">sign-up</a></li>
+        </ul>
+    </header>
+</body>
+</html>

@@ -1,0 +1,106 @@
+.card, sidebar li, footer p {
+  font-size: 0.9rem;
+  line-height: 1.7em;
+}
+
+h1, h3 {
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Montserrat';
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 3fr 1fr;
+      grid-template-columns: 3fr 1fr;
+  -ms-grid-rows: 4fr 1fr;
+      grid-template-rows: 4fr 1fr;
+      grid-template-areas: "section sidebar"
+ "footer sidebar";
+  height: 100vh;
+}
+
+section {
+  padding: 7.5em;
+}
+
+section > p {
+  font-size: 1.5em;
+  margin-top: 0;
+  margin-bottom: 1.5em;
+}
+
+.card-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.card {
+  padding: 1em;
+  margin-right: 0.5em;
+  -webkit-box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.05);
+          box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+sidebar {
+  padding: 3em;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  grid-area: sidebar;
+  background: #005699;
+  color: #99d3ff;
+}
+
+sidebar a {
+  font-weight: bold;
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+}
+
+footer {
+  padding: 3em;
+}
+
+h1 {
+  font-size: 3.5rem;
+  color: #0090ff;
+  margin-bottom: 0;
+}
+
+h3 {
+  font-size: 1.3rem;
+}
+
+@media all and (max-width: 420px) {
+  .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  section .card-container {
+    display: -ms-grid;
+    display: grid;
+    grid-auto-flow: row;
+  }
+}
+/*# sourceMappingURL=main.css.map */

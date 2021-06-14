@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>header</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #bbb;
+        }
+        .header{
+            background-color: #fff;
+            box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.3);
+        }
+        .header ul{
+            list-style: none;
+            overflow: hidden;
+            background-color: #fff;
+        }
+        a{
+            color: black;
+        }
+        .header ul a{
+            display: block;
+            padding: 10px;
+            border-right: 1px solid #aaa;
+            text-decoration: none;
+            text-align:center;
+        }
+        .header ul a:hover{
+            background-color: #ddd;
+            opacity: 0.6;
+        }
+        .header .logo{
+            float: left;
+            display: block;
+            font-size: 2em;
+            padding: 10px 20px;
+        }
+        .header .menu{
+            clear: both;
+            /*width: 50%;
+            margin: 0 0 0 auto;*/
+            max-height: 0;
+            transition: max-height 0.2s ease-out;
+        }
+    .header .menu-icon{
+        /*border: 1px solid red;*/
+        padding: 28px 20px;
+        position: relative;
+        float: right;
+        cursor: pointer;
+    }
+    .header .menu-icon .nav-icon{
+        background: #333;
+        display: block;
+        height: 2px;
+        width: 18px;
+        position: relative;
+        transition: background 0.2s ease-out;
+    }
+    .header .menu-icon .nav-icon:before{
+        background: #333;
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        transition: all 0.2s ease-in-out;
+        top: 5px;
+    }
+    .header .menu-icon .nav-icon:after{
+        background: #333;
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        transition: all 0.2s ease-in-out;
+        top: -5px;
+    }
+    .header .menu-btn{
+        display: none;
+    }
+    .header .menu-btn:checked ~ .menu{
+        max-height: 290px;
+    }
+    .header .menu-btn:checked ~ .menu-icon .nav-icon{
+        background: transparent;
+    }
+    .header .menu-btn:checked ~ .menu-icon .nav-icon:before{
+        transform: rotate(-45deg);
+        top: 0;
+    }
+    .header .menu-btn:checked ~ .menu-icon .nav-icon:after{
+        transform: rotate(45deg);
+        top: 0;
+    }
+    .button{
+     float: left;
+     position: absolute;
+     top:3%;
+     margin-right: auto;
+    }
+
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="/" class="logo">CORP</a>
+        <input type="checkbox" class="menu-btn" id="menu-btn">
+        <label for="menu-btn" class="menu-icon"><span class="nav-icon"></span></label>
+        <ul class="menu">
+            <li><a href="#">home</a></li>
+            <li><a href="#">about</a></li>
+            <li><a href="#">services</a></li>
+            <li><a href="#">portfolio</a></li>
+            <li><a href="#">Contact us</a></li>
+        </ul>
+        <li class="button"><a href="#">login</a></li>
+        <li class="button secondary"><a href="#">sign-up</a></li>
+    </header>
+</body>
+</html>

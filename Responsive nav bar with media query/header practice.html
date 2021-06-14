@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>header</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+        background-color: #bbb;
+        }
+        a{
+            color: #000;
+        }
+        header{
+            background-color:#fff;
+            padding: 6px 12px;
+            box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content:space-between;
+        }
+        header ul{
+            list-style: none;
+            overflow: hidden;
+            background-color: #fff;
+        }
+        .logo{
+            font-size: 2em;
+            text-decoration: none;
+            color: black;
+            display: block;
+            padding: 10px 20px;
+            text-transform: capitalize;
+        }
+       /* header .menu{
+            clear: both;
+            max-height: 0;
+            transition: max-height 0.2s ease-out;
+        }*/
+        header .menu li{
+            font-size: 17px;
+            padding: 15px 5px;
+            overflow: hidden;
+        }
+        header ul a{
+            text-decoration: none;
+            text-transform: capitalize;
+            display: block;
+            color: black;
+            padding: 1px;
+            text-align: center;
+        }
+         header li a:hover{
+           opacity: 0.6;
+        }
+        .button.secondary{
+            border-bottom: 1px solid #444;
+        }
+        header .menu-icon .nav-icon{
+            cursor: pointer;
+            background: #999;
+            display: block;
+            height: 2px;
+            width: 18px;
+            position: relative;
+            transition: background 0.2s ease-out;
+        }
+        header .nav-icon::before,.nav-icon::after{
+            content: "";
+            background: #999;
+            display: inline-block;
+            height: 2px;
+            position: absolute;
+            width: 18px;
+            transition: all 0.2s ease-in-out;
+        }
+        .nav-icon::before{
+            top:5px;
+        }
+        .nav-icon::after{
+            top: -5px;
+        }
+        header .menu-icon{
+        /*border: 1px solid red;*/
+        padding: 15px 10px;
+        position: relative;
+        float: right;
+        cursor: pointer;
+    }
+    header .menu-btn{
+        display: none;
+    }
+    header .menu{
+       
+       max-height: 0;
+       transition:  all 0.4s ease-out;
+    }
+    header .menu-btn:checked ~ .menu{
+        
+        max-height: 360px;
+ 
+    }
+    header .menu-btn:checked ~ .menu-icon .nav-icon{
+        background: transparent;
+    }
+    header .menu-btn:checked ~ .menu-icon .nav-icon:before{
+        transform: rotate(-45deg);
+        top: 0;
+    }
+    header .menu-btn:checked ~ .menu-icon .nav-icon:after{
+        transform: rotate(45deg);
+        top: 0;
+    }
+
+     /*mobile view*/
+
+    .menu{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+           
+        }
+        .menu-icon{
+            order: 2;
+            margin-top: 12px;
+        }
+        .item.button:not(.secondary){
+            order: 1;
+            width: auto;
+            margin-left: 65%;
+            
+        }
+        .item{
+            order: 4;
+            width: 100%;
+        }
+        .button.secondary{
+            order: 3;
+        }
+
+        /* tablet view*/
+
+    @media all and (min-width:468px){
+            .menu{
+                justify-content: center;
+            }
+            .button.secondary{
+                order: 2;
+                border: 0;
+                width: auto;
+                
+            }
+            .item.button{
+                order: 1;
+                width: auto;
+            }
+            .menu-icon{
+                order: 3;
+            }
+            .button.secondary{
+                border: 0;
+            }
+            .button a{
+                text-decoration: none;
+                padding: 7px 15px;
+                background: teal;
+                border: 1px solid #006d6d;
+                border-radius: 50em;
+            }
+            .button.secondary a{
+                background: transparent;
+            }
+            /*.button a:hover{
+                transition: all 0.25s;
+            }*/
+            .button:not(.secondary) a:hover{
+                background: #006d6d;
+                border-color: #005959;
+                transition: all 0.25s;
+            }
+            .button.secondary a:hover{
+                color: #ddd;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">logo</a>
+        <input type="checkbox" class="menu-btn" id="menu-btn">
+        <label for="menu-btn" class="menu-icon"><span class="nav-icon"></span></label>
+        <ul class="menu">
+            <li class="item"><a href="#">home</a></li>
+            <li class="item"><a href="#">services</a></li>
+            <li class="item"><a href="#">portfolio</a></li>
+            <li class="item"><a href="#">about</a></li>
+            <li class="item"><a href="#">contact</a></li>
+            <li class="item button"><a href="#">login</a></li>
+            <li class="item button secondary" ><a href="#">sign-up</a></li>
+        </ul>
+    </header>
+</body>
+</html>

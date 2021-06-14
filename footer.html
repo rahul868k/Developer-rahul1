@@ -1,0 +1,226 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>footer</title>
+    <style>
+      *{
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}  
+footer{
+    display: grid;
+    justify-content: end;
+    align-items: end;
+    min-height: 100vh;
+}
+.footer{
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 50px 100px;
+    background: #3044a5;
+}
+footer .footer{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+.footer > div{
+    background: #ffeb3b;
+}
+footer .footer .sec h2{
+    position: relative;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+footer .footer .sec h2::before{
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width:50px;
+    height: 2px;
+    background: #ffeb3b;
+}
+footer .footer .sec p{
+    color: #fff;
+}
+.sci{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4,50px);
+    grid-gap: 10px;
+}
+.sci li {
+    list-style: none;
+    transition: 0.4s ease-in-out;
+}
+.sci li a{
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    background: #3e56cb;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-decoration:none;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.4s ease-in-out;
+    opacity: 0;
+    animation: slide_right 0.5s linear forwards;
+    animation-delay: calc(0.1s * var(--i));
+}
+@keyframes slide_right 
+{
+    0%
+    {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100%
+    {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+.sci li:hover{
+    background: ;
+    transform: translateY(-10px);
+}
+.sci li a .fa{
+    color: #fff;
+    font-size: 20px;
+}
+.quicklinks li a{
+    color: #f7f7f7;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+.quicklinks li {
+    list-style-type: none;
+}
+.quicklinks li a:hover{
+    color: #ffeb3b;
+}
+.info{
+    position: relative;
+}
+.info li{
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    margin-bottom: 16px;
+}
+.info li span:nth-child(1){
+    color: #fff;
+    font-size: 20px;
+}
+.info li span{
+    color:#fff;
+}
+.info a{
+    color: #f7f7f7;
+    text-decoration: none;
+}
+.info a:hover{
+    color: #ffeb3b;
+}
+.copyrightText{
+    width: 100%;
+    background: #1f3389;
+    padding:8px 100px;
+    text-align:center;
+    color: #fff;
+}
+/* now make it responsible*/
+@media screen (max-width: 991px;)
+{
+    footer{
+        padding: 40px;
+    }
+    footer .footer{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .copyrightText{
+        padding: 8px 40px;
+    }
+}
+@media screen (max-width: 768px;)
+{
+    footer .footer{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+    </style>
+</head>
+<body>
+<footer>
+    <div class="footer">
+        <div class="sec aboutus">
+            <h2>About</h2>
+            <p>its an art,application,and practice of creating durable images by recording light,
+                either electronically by means of an image sensor, 
+                or chemically by means of a light-sensitive material such as photographic film.</p>
+        <ul class="sci">
+            <li><a href="#" style="--i:12;"><i style="font-size:24px" class="fa">&#xf09a;</i></a></li>
+            <li><a href="#" style="--i:13;"><i style="font-size:24px" class="fa">&#xf099;</i></a></li>
+            <li><a href="#" style="--i:14;"><i style="font-size:24px" class="fa">&#xf16d;</i></a></li>
+            <li><a href="#" style="--i:14;"><i style="font-size:24px" class="fa">&#xf16a;</i></a></li>
+        </ul>
+        </div>
+        <div class="sec quicklinks">
+            <h2>Quick Links</h2>
+            <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Privacy Policu</a></li>
+                <li><a href="#">Helpt</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="sec quicklinks">
+            <h2>Shop</h2>
+            <ul>
+                <li><a href="#">Jaguar f-type</a></li>
+                <li><a href="#">Jaguar f-type1</a></li>
+                <li><a href="#">Jaguar f-type2</a></li>
+                <li><a href="#">Jaguar f-type3</a></li>
+                <li><a href="#">Jaguar f-type4</a></li>
+                <li><a href="#">Jaguar f-type5</a></li>
+            </ul>
+        </div>
+        <div class="sec Contact">
+            <h2>Contact-Us</h2>
+            <ul class="info">
+                <li>
+                <span><i style='font-size:24px' class='fas'>&#xf3c5;</i></span>
+                <span>+91 India <br>
+                Hyderabad, Abids, <br>Boggulakunta</span>
+                </li>
+                <li>
+                <span><i style='font-size:24px' class='fas'>&#xf3c5;</i></span>
+                <span><p><a href="tel:+91 9912289824">+91 9912289824</a></p>
+                <p><a href="tel:+91 9912289824">+91 9912289824</a></p></span>
+                </li>
+                <li>
+                <span><i style='font-size:24px' class='fas'>&#xf3c5;</i></span>
+                <p><a href="mailto:rahul@pdpl">rahul@pdpl</a></p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<div class="copyrightText">
+    <p>Copyright 0 2021 Online Tutorials. All Rights Reserved</p>
+</div>
+</body>
+</html>

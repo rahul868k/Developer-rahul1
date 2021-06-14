@@ -1,0 +1,100 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Bar practice</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+        background: white;
+        font-family:arial;
+        font-size: 16px;
+        margin: 0;
+        }
+        .header{
+            background: #030346bb;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 60px;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo{
+            font-size: 30px;
+            font-weight: 700;
+        }
+        .menu_trigger span{
+            display: block;
+            height: 4px;
+            width: 30px;
+            background: #fff;
+            margin: 4px;
+        }
+        .menu_trigger{
+            display: inline-block;
+            position: relative;
+        }
+        .close_icon{
+            color: #fff;
+            font-size: 60px;
+            position: relative;
+            transform: rotate(45deg);
+            position: absolute;
+}
+.side_nav ul li a{
+    list-style-type:none;
+  display: block;
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+  padding: 12px 30px;
+  border-bottom: 1px solid;
+  transition: all 0.3s ease-in-out;
+}
+.side_nav ul li a:hover{
+  background: #53048f;
+  color: #fff;
+}
+.menu_trigger:checked + .side_nav{
+  transform: translateX(0%);
+}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            LOGO
+        </div>
+    <a href="#" class="menu_trigger">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </a>
+    </header>
+    <nav class="side_nav">
+        <span class="close_icon">+
+            
+        </span>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </nav>
+    <div class="banner">
+        <h1>SIDE NAVIGATION <br>ONLY <span>HTML CSS</span></h1>
+    </div>
+</body>
+</html>

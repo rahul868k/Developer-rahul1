@@ -1,0 +1,489 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+font-family: 'Great Vibes', cursive;*/
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: tahoma;
+}
+/*#ffa6004d rgba(255,166,0,0.3)*/
+body{
+    width: 100%;
+    /*height: 100vh;*/
+    background: url(images/background.jpeg);
+    /*background-repeat: no-repeat;*/
+    background-size: cover;
+    position: absolute;
+    background-blend-mode: multiply;
+    padding: 1% 1%;
+    z-index: 1;
+    /*object-fit: cover;*/
+}
+pre::after{
+    content: "";
+    position: absolute;
+    left: 7px;
+    width: 1px;
+    height: 50px;
+    background-color: black;
+}
+.signature pre{
+    margin-top: 46px;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    margin-left: 9px;
+    font-family: 'Pinyon Script', cursive;
+    font-size: 14px;
+}
+.signature{
+    clear: both;
+    height: 0;
+    margin-top: 0;
+}
+nav{
+    clear: both;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*margin-top: 10px;*/
+    height: auto;
+    width: 90%;
+    margin: auto;
+    /*position: fixed;*/
+    position: absolute;
+    top: 2%;
+    left:5%;
+}
+/*.container > nav{
+    background: burlywood;
+}*/
+nav ul{
+    list-style: none;
+    overflow: hidden;
+}
+nav li{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav ul li a{
+    text-decoration: none;
+    display: block;
+    /*border: 1px solid red;*/
+    border-radius: 80px;
+    padding:12px;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 600;
+    margin: 0 1px;
+    z-index: 3;
+}
+nav ul a:not(.ginger):hover{
+    background-color: #ddd;
+    color: rgba(0, 0, 0, 0.671);
+}
+nav li:nth-child(4) a{
+    text-transform: lowercase;
+    font-size: 35px;
+    font-family: serif;
+}
+@media all and (min-width:768px){
+    nav li{
+        display:inline-block;
+        margin: auto;
+    }
+    nav ul li a{
+        padding: 15px;
+        margin: auto;
+        font-size: 12px;
+    }
+    nav li:nth-child(4) a{
+        font-size: 45px;
+    }
+    nav{
+        width: 90%;
+        margin: auto;
+        /*position: fixed;
+        top:5%;
+        left:5%;*/
+    }
+    .social .fa{
+        font-size:18px;
+    }
+    pre::after{
+        height: 86px;
+        left: 10px;
+    }
+    .signature pre{
+        margin-top: 80px;
+        margin-left: 10px;
+        font-size: 20px;
+    }
+    /*.container > nav{
+        background: burlywood;}*/
+}
+.social{
+    position: absolute;
+    top: 3%;
+    right: 2%;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 550;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing:antialiased;
+}
+.social ul{
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+.social ul li{
+    list-style: none;
+    margin: 5px 0;
+}
+.social i{
+    font-size: 13px;
+}
+.social ul li a{
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 14px;
+    color: #000;
+    text-align: center;
+    clear: both;
+}
+.social li:nth-child(1) a::before{
+    content: "facebook";
+    font-size: 0;
+    display: block;
+    /*height: auto;
+    width: auto;*/
+    right: 50px;
+    background: linear-gradient(to right, red, rgb(20, 2, 43));
+    background-size: cover;
+    background-clip:text;
+    -webkit-background-clip: text;
+    color: transparent;
+    opacity: 0.8;
+    position: absolute;
+    transition: 0.3s ease-in;
+    z-index: 5;
+    }
+.social li:nth-child(1) a:hover::before{
+    font-size: 12px;
+    text-transform: capitalize;
+    box-shadow: 4px 3px 5px black;;
+}
+.social li:nth-child(2) a::before{
+    content: "instagram";
+    font-size: 0;
+    display: block;
+    /*height: auto;
+    width: auto;*/
+    right: 50px;
+    background: linear-gradient(to right, red, rgb(20, 2, 43));
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    opacity: 0.8;
+    position: absolute;
+    transition: 0.3s ease-in;
+    }
+.social li:nth-child(2) a:hover::before{
+    font-size: 12px;
+    text-transform: capitalize;
+    box-shadow: 4px 3px 5px black;
+}
+.social li:nth-of-type(3) a:before{
+    content: "twitter";
+    font-size: 0;
+    display: block;
+    /*height: auto;
+    width: auto;*/
+    right: 50px;
+    background: linear-gradient(to right, red, rgb(20, 2, 43));
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    opacity: 0.8;
+    position: absolute;
+    transition: 0.3s ease-in;
+    }
+.social li:nth-of-type(3) a:hover::before{
+    font-size: 12px;
+    text-transform: capitalize;
+    box-shadow: 4px 3px 5px black;
+}
+.social li:nth-child(4) a::before{
+    content: "youtube";
+    font-size: 0;
+    display: block;
+    /*height: auto;
+    width: auto;*/
+    right: 50px;
+    background: linear-gradient(to right, red, rgb(20, 2, 43));
+    background-size: cover;
+    opacity: 0.8;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    position: absolute;
+    transition: 0.3s ease-in;
+    }
+.social li:nth-child(4) a:hover::before{
+    font-size: 12px;
+    text-transform: capitalize;
+    box-shadow: 4px 3px 5px black;
+}
+.orange-tree{
+        width: 75%;
+        margin: auto;
+        margin-top: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+}
+.orange-tree img{
+        width: 600px;
+        height: 400px;
+}
+.read{
+        display: flex;
+        flex-direction:column;
+        margin-right: 20px;
+}
+.read p{
+        text-align: right;
+        width: 350px;
+        line-height: 20px;
+        word-spacing: 0.5rem;
+}
+.read a{
+    margin-left: 255px;
+    text-decoration: none;
+    background: rgba(255, 0, 0, 0.671);
+    color: white;
+    padding: 10px;
+    text-align: right;
+    margin-top: 20px;
+}
+@media all and (max-width:768px){
+    .orange-tree{
+        width: 100%;
+        flex-direction: column-reverse;
+    }
+    .orange-tree img{
+        margin-top: 250px;
+        width: 350px;
+        height: 300px;
+    }
+    .read{
+        margin-top: 15px;
+    }
+    .read p{
+        text-align: center;
+    }
+    .read a{
+        margin:auto;
+        text-align: center;
+    }
+}
+.signature1 pre::after{
+    content: "";
+    position: absolute;
+    transform: rotate(90deg);
+    top: -15px;
+    left: 78px;
+    width: 1px;
+    height: 50px;
+    background-color: black;
+}
+.signature1 pre{
+    font-family: 'Pinyon Script', cursive;
+    font-size: 14px;
+}
+.signature1{
+    clear: both;
+    height: 0;
+    margin-top: 40px;
+    position: absolute;
+    right: 9%;
+}
+@media all and (min-width:768px){
+    .signature1 pre{
+        font-size: 20px;
+    }
+    .signature1{
+        margin-top: 60px;
+        right: 8%;
+    }
+    .signature1 pre::after{
+        top: -36px;
+        left: 130px;
+        height: 100px;
+    }
+}
+.img-container{
+    clear: both;
+    margin-top: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+.img1 img{
+    width: 250px;
+    height: 300px;
+}
+:root{
+    --color:brown;
+}
+.img1 h1{
+    text-align: center;
+    color: var(--color);
+    position: relative;
+    top:19px;
+    /*outline: 1px solid black;*/
+}
+@media all and (max-width:768px){
+    .img1 img{
+        width: 150px;
+        height: 200px;
+    }
+}
+.cont{
+    margin-top: 140px;
+    margin-bottom: 70px;
+    position: relative;
+}
+.cont p{
+    width: 30%;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 2em;
+    word-spacing: 0.4rem;
+    letter-spacing: 0.1rem;
+    
+}
+.cont p::before{
+    content: open-quote;
+    color: var(--color);
+    font-size: 30px;
+    position: absolute;
+    left: 50%;
+    top: -50px;
+}
+.cont p::after{
+    content: close-quote;
+    color: var(--color);
+    font-size: 30px;
+    position: absolute;
+    right: 50%;
+    top: 150px;
+}
+.signature2 pre::after{
+    content: "";
+    position: absolute;
+    transform: rotate(90deg);
+    width: 1px;
+    height: 100px;
+    background-color: black;
+    top: -35px;
+    left: 130px;
+}
+.signature2 pre{
+    font-family: 'Pinyon Script', cursive;
+    font-size: 22px;
+}
+.signature2{
+    clear: both;
+    height: 0;
+    margin-top: 60px;
+    position: absolute;
+    right: 8%;
+}
+.img-con{
+    margin: auto;
+    clear: both;
+    margin-top: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.img-con > * {
+    flex-basis: 20%;
+}
+.third-orange img{
+    width: 430px;
+    height: 300px;
+    
+}
+.third-orange h1{
+    color: var(--color);
+    position: relative;
+    top:19px;
+}
+.content p{
+    line-height: 2em;
+    word-spacing: 0.4rem;
+    letter-spacing: 0.1rem;
+    margin-bottom: 40px;
+}
+.content a{
+    text-decoration: none;
+    background: rgba(255, 0, 0, 0.671);
+    color: white;
+    padding: 10px;
+}
+.signature3 pre::after{
+    content: "";
+    position: absolute;
+    transform: rotate(90deg);
+    width: 1px;
+    height: 100px;
+    background-color: black;
+    top: -35px;
+    left: -55px;
+}
+.signature3 pre{
+    font-family: 'Pinyon Script', cursive;
+    font-size: 22px;
+}
+.signature3{
+    clear: both;
+    height: 0;
+    margin-top: 120px;
+    position: absolute;
+    left: 8%;
+}
+.img-grid{
+    margin-top: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.img-grid img{
+    width: 200px;
+    height: 200px;
+}
+.copy-right{
+    margin-top: 20px;
+    padding:8px 100px;
+    text-align:center;
+}
