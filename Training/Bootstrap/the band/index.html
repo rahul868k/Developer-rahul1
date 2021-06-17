@@ -7,6 +7,8 @@
     <!-- offline css link -->
     <link rel="stylesheet" href="C:\Users\rahul\Downloads\Bootstrap\bootstrap-5.0.1-dist\css\bootstrap.css">
 
+    <link href="locatorplus.css" rel="stylesheet">
+
     <!-- font family cdn -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
@@ -273,12 +275,108 @@
       font-size: 18px;
       color: gray;
     }
+    .parallax{
+      background-image: url(https://images.unsplash.com/uploads/1411160110892ab555b6f/80b0d25e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fG11c2ljJTIwYmFja2dyb3VuZHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
+      object-fit: cover;
+    }
     .band-member{
-      margin-bottom: 1.5em;
+      margin-bottom: 0.5em;
       position:relative;
       top: -3em;
       z-index: 100;
     }
+   .parallax-home{
+     height: 30vmax;
+     background: url(https://images.unsplash.com/photo-1499415479124-43c32433a620?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bXVzaWMlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-attachment: fixed;
+     background-position: center;
+     transition: all 0.5s;
+   }
+   @media all and (max-width:425px) {
+     .parallax-home{
+       background-size: initial;
+       object-fit: cover;
+     }
+   }
+
+   .music{
+    margin-top: 1em;
+    margin-bottom: 2em;
+   }
+   .music-container{
+     background: black;
+     box-shadow: 6px 6px 15px 0 rgba(0, 0, 0,0.5);
+     padding-top: 7vh;
+     padding-bottom: 7vh;
+   }
+   .music-title{
+     margin-bottom: 0.5em;
+   }
+   .music .btn:hover{
+    border: none;
+    opacity: 0.9;
+   }
+   .shows{
+     font-size: 0.9em;
+   }
+   @media all and (max-width:425px) {
+    .shows .card-img{
+      height: 350px;
+      object-fit: cover;
+    }
+   }
+  .shows :is(h3){
+    font-family: sans-serif;
+    color: white;
+   }
+   .show-info{
+     display: flex;
+     flex-direction: column;
+   }
+   .show-info > *{
+    margin-bottom: 0;
+   }
+   .date{
+     font-weight: bold;
+     margin-top: 1.25em;
+   }
+   .date::before{
+     content: "\f073";
+     display: inline-block;
+     font-family:"Font Awesome 5 Free";
+     margin-right: 0.5em;
+   }
+   .price{
+     font-weight: bold;
+   }
+   .price .small{
+     font-weight: lighter;
+   }
+   .price::before{
+     content: "\f3ff";
+     display: inline-block;
+     font-family:"Font Awesome 5 Free";
+     margin-right: 0.5em;
+     transform: rotate(-45deg);
+     margin-top: 0.1em;
+     font-size: 0.8em;
+   }
+   .show-info .btn3{
+     background: red;
+     color: white;
+     border: none;
+   }
+   .btn:hover{
+     opacity: 0.9;
+     border: none;
+     box-shadow: none;
+   }
+   .form-control:focus{
+     border: none;
+     box-shadow: none;
+   }
 
     footer a{
       color: rgba(255,255,255,.55);
@@ -484,10 +582,10 @@
                 </div>
             </div> <!--/row close-->
         </div><!--container-fluid close-->
-
+      <div class="parallax">
         <div class="container text-center band-members">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-sm-4">
                     <div class="card bg-dark border-0 band-member">
                         <img class="card-img-top img-fluid" src="https://images.unsplash.com/photo-1517230878791-4d28214057c2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="singer">
                         <div class="card-block">
@@ -496,7 +594,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-sm-4">
                     <div class="card bg-dark border-0 band-member">
                         <img class="card-img-top img-fluid" src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="singer">
                         <div class="card-block">
@@ -505,7 +603,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-sm-4">
                     <div class="card bg-dark border-0 band-member">
                         <img class="card-img-top img-fluid" src="https://images.unsplash.com/photo-1535712593684-0efd191312bb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=749&q=80" alt="singer">
                         <div class="card-block">
@@ -515,10 +613,121 @@
                     </div>
                 </div>
             </div>
+          </div>
+        </div>
+          <div class="parallax-home"></div>
+      </section>
+
+      <section class="music text-center">
+        <div class="container music-container">
+          <h2 class="display-2 text-light music-title">Our Music</h2>
+          <div class="row gx-0 g-0 justify-content-center no-gutters">
+            <div class="col-sm-3 col">
+              <img class="img-fluid" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1B5wo4XisRc_h_u4rl89PuO6CuHV4QBQe2Q&usqp=CAU" alt="taylor-swift">
+            </div>
+            <div class="col-sm-3 col">
+                <img class="img-fluid" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdQ2Ple7SJKdKLhbCyVSTn3osDaGd8uxH1Aw&usqp=CAU" alt="music">
+            </div>
+            <div class="col-sm-3 col">
+              <img class="img-fluid" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdFP01RdUsGwjL6l8V6EF9SvfFOEGxN-Lipg&usqp=CAU" alt="music">
+            </div>
+          </div>
+          <div class="row gx-0 g-0 justify-content-center no-gutters">
+            <div class="col-sm-3 col">
+              <img class="img-fluid" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThK15e6Y-W0VIN5wqz3y9UnEoZxgaidjgmqpChhQuYLO4uJKxVPSHP6VcvwjgrX7GNSUg&usqp=CAU" alt="music">
+            </div>
+            <div class="col-sm-3 col">
+              <img class="img-fluid" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1OSYmxnZWSjalD8b5dGtGaI6zH0deXzzNz1XK0iRE9KMbyVP9xYGpmr2xwjRSbmjYJlo&usqp=CAU" alt="music">
+            </div>
+            <div class="col-sm-3 col">
+              <img class="img-fluid" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKBT48FwabL2aZQ6vLJu0d42HaPHLA0HCM6DOmxGBxtgbe-RlmXelXn65kZbDeMZoLkWI&usqp=CAU" alt="music">
+            </div>
+          </div>
+        </div>
+        <p class="mt-4 mb-4">See something you like</p>
+        <a style="background: red;color: white;padding: 0.5rem 2rem;" href="https://www.spotify.com/us/" class="btn btn1 border-0">Visit the store</a>
+      </section>
+
+      <section class="upcoming-shows">
+        <div class="container">
+          <h2 class="display-2 text-light text-center">Upcoming Shows</h2>
+          <div class="row g-0 shows mt-4">
+            <div class="col-lg-3 col-md-6">
+              <div class="card border-0">
+                <img src="https://images.unsplash.com/photo-1545224144-b38cd309ef69?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjh8fG11c2ljJTIwYmFuZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="show" class="card-img img-fluid">
+                <div class="card-img-overlay show-info">
+                  <h3>Billboard</h3>
+                  <p>TG, Hyd, Abids</p>
+                  <p class="date">02.07.2021</p>
+                  <p class="price"><small>starting at</small> $19</p>
+                  <a href="www.google.com" class="btn btn-primary btn3 mt-auto">Buy tickets</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="card border-0">
+                <img src="https://images.unsplash.com/photo-1550634129-b71e31b56212?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzZ8fG11c2ljJTIwYmFuZHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="show" class="card-img img-fluid">
+                <div class="card-img-overlay show-info">
+                  <h3>NME</h3>
+                  <p>Mumbai, MR, pune</p>
+                  <p class="date">08.07.2021</p>
+                  <p class="price"><small>starting at</small> $19</p>
+                  <a href="www.google.com" class="btn btn-primary btn3 mt-auto">Buy tickets</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="card border-0">
+                <img src="https://images.unsplash.com/photo-1587321541040-fe74194a9ce7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzl8fG11c2ljJTIwYmFuZHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="show" class="card-img img-fluid">
+                <div class="card-img-overlay show-info">
+                  <h3>Pitchfork</h3>
+                  <p>Ap, Viz, Qc</p>
+                  <p class="date">15.07.2021</p>
+                  <p class="price"><small>starting at</small> $19</p>
+                  <a href="www.google.com" class="btn btn-primary btn3 mt-auto">Buy tickets</a>
+                </div>
+              </div>
+            </div>  
+            <div class="col-lg-3 col-md-6">
+              <div class="card border-0">
+                <img src="https://images.unsplash.com/photo-1578873375841-468b1557216f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Njl8fG11c2ljJTIwYmFuZHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="show" class="card-img img-fluid">
+                <div class="card-img-overlay show-info">
+                  <h3>Taylor-swift</h3>
+                  <p>Delhi, AR, Agra</p>
+                  <p class="date">21.07.2021</p>
+                  <p class="price"><small>starting at</small> $19</p>
+                  <a href="www.google.com" class="btn btn-primary btn3 mt-auto">Buy tickets</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-sm-6 d-flex justify-content-center align-items-center">
+            <div style="width: 100%"><iframe width="100%" height="auto" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=1%20Grafpton%20Street,%20Dublin,%20Ireland+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+              </iframe><!--<a href="https://www.maps.ie/draw-radius-circle-map/">Circle area map</a>--></div>
+          </div>
+          <div class="col-sm-6">
+            <h2 class="text-light text-center display-3">Contact-Us</h2>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="floatingInput" placeholder="Name">
+              <label class="text-danger" for="floatingInput">Name</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="Email" class="form-control" id="floatingPassword" placeholder="Email">
+              <label class="text-danger" for="floatingPassword">Email</label>
+            </div>
+            <div class="form-floating">
+              <textarea class="form-control" placeholder="message" id="floatingTextarea2" style="height: 100px"></textarea>
+              <label class="text-danger" for="floatingTextarea2">message</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
     <footer class="bd-footer py-2 mt-1 mb-4">
       <div class="container py-5">
         <div class="row">
