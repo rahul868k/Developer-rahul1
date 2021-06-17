@@ -108,13 +108,16 @@
             font-weight: 400;
             opacity: 0;
             transform: translateY(3rem);
-            animation: fadeInUp 2s ease calc(4s + 2s) forwards;
+            animation: fadeInUp 2s ease calc(5s + 1s) forwards;
         }
         .box h4{
           opacity: 0;
-          transform: translateY(5rem);
-          animation: title 2s ease calc(6s + 2s) forwards;
+          transform: translateY(2rem);
+          animation: title 2s ease calc(6s + 0.5s) forwards;
           transition: 0.5s;
+        }
+        .box .name{
+            animation: disappear 1s ease calc(5s + 0.5s) forwards;
         }
         @keyframes typewriter {
             to{
@@ -129,13 +132,18 @@
          @keyframes fadeInUp {
             to{
               opacity: 1;
-              transform: translateY(0);
+              transform: translateY(-2em);
+            }
+        }
+        @keyframes disappear {
+            to{
+                opacity: 0;
             }
         }
         @keyframes title {
             to{
               opacity: 1;
-              transform: translateY(0);
+              transform: translateY(-2em);
             }
         }
         @media all and (max-width:360px) {
@@ -369,7 +377,11 @@
      border: none;
    }
    .btn:hover{
-     opacity: 0.9;
+     opacity: 0.85;
+     border: none;
+     box-shadow: none;
+   }
+   .btn:focus{
      border: none;
      box-shadow: none;
    }
@@ -377,6 +389,11 @@
      border: none;
      box-shadow: none;
    }
+
+
+
+
+
 
     footer a{
       color: rgba(255,255,255,.55);
@@ -707,8 +724,7 @@
       <div class="container mt-5">
         <div class="row">
           <div class="col-sm-6 d-flex justify-content-center align-items-center">
-            <div style="width: 100%"><iframe width="100%" height="auto" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=1%20Grafpton%20Street,%20Dublin,%20Ireland+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
-              </iframe><!--<a href="https://www.maps.ie/draw-radius-circle-map/">Circle area map</a>--></div>
+            <div style="width: 100%"><iframe width="100%" height="auto" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=1%20Grafpton%20Street,%20Dublin,%20Ireland+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><!--<a href="https://www.maps.ie/draw-radius-circle-map/">Circle area map</a>--></div>
           </div>
           <div class="col-sm-6">
             <h2 class="text-light text-center display-3">Contact-Us</h2>
@@ -720,10 +736,11 @@
               <input type="Email" class="form-control" id="floatingPassword" placeholder="Email">
               <label class="text-danger" for="floatingPassword">Email</label>
             </div>
-            <div class="form-floating">
+            <div class="form-floating mb-3">
               <textarea class="form-control" placeholder="message" id="floatingTextarea2" style="height: 100px"></textarea>
               <label class="text-danger" for="floatingTextarea2">message</label>
             </div>
+            <a style="background: red;color: white;padding: 0.5rem 2rem;" href="www.google.com" class="btn btn1 border-0">Submit</a>
           </div>
         </div>
       </div>
