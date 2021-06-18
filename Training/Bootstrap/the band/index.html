@@ -78,6 +78,37 @@
             right: 5%;
           }
         }
+  .planet{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(-5rem);
+    animation: planet 2s ease calc(5s + 1s) forwards;
+    transition: 0.5s;
+ }
+ @keyframes planet {
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+ }
+ .earth{
+    width: 100px;height: 100px;
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKze4S3ObrHpQUBbDze-WQmcQjgCkEAZ1N8wWiuAaBgFx7yAMd7LDC6wIq--hI0FBZgso&usqp=CAU);
+    border-radius: 50%;
+    background-size: cover;
+    box-shadow: inset 0 0 5px black, 0 0 2px rgb(241, 3, 3);
+    animation: earth 5s linear infinite;
+} 
+@keyframes earth {
+    0%{
+        background-position: 0%;
+    }
+    100%{
+        background-position: 200%;
+    }
+}
         .box .name{
            font-size: 2em;
            font-weight: 600;
@@ -107,13 +138,13 @@
             font-size: 2rem;
             font-weight: 400;
             opacity: 0;
-            transform: translateY(3rem);
-            animation: fadeInUp 2s ease calc(5s + 1s) forwards;
+            transform: translateY(2rem);
+            animation: fadeInUp 2s ease calc(6s + 0.5s) forwards;
         }
         .box h4{
           opacity: 0;
-          transform: translateY(2rem);
-          animation: title 2s ease calc(6s + 0.5s) forwards;
+          transform: translateY(3rem);
+          animation: title 2s ease calc(6.5s + 0.5s) forwards;
           transition: 0.5s;
         }
         .box .name{
@@ -143,7 +174,7 @@
         @keyframes title {
             to{
               opacity: 1;
-              transform: translateY(-2em);
+              transform: translateY(-1.7em);
             }
         }
         @media all and (max-width:360px) {
@@ -480,6 +511,10 @@
 <div id="up">
     <section>
       <div class="box">
+        <div class="planet">
+          <div class="loader"><span></span></div>
+          <div class="earth"></div> 
+        </div>
         <p class="typehead">Rahul</p>
         <p class="name">Hello, my name is Rahul. </p>
         <p class="welcome"> welcome to my website</p>
